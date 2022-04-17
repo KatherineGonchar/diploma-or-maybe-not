@@ -16,8 +16,11 @@ body{
     min-height: 100vh;
     background: var(--clr);
 }
+a{
+    color: black;
+}
 .navigation {
-    position: relative;
+    position: fixed; /*was relative*/
     width: 250px;
     height: 100vh;
     background: linear-gradient(50deg, rgb(70, 60, 78) 0%, rgb(58, 52, 88) 100%);
@@ -139,16 +142,138 @@ body{
 .navigation ul li:nth-child(6).active ~ .indicator{
     transform: translateY(calc(70px * 5 + 50px));
 }
-/*.Прямоугольник_1 {
-    border-radius: 30px;
-    background-image: -moz-linear-gradient( 50deg, rgb(70,60,78) 0%, rgb(58,52,88) 100%);
-    background-image: -webkit-linear-gradient( 50deg, rgb(70,60,78) 0%, rgb(58,52,88) 100%);
-    background-image: -ms-linear-gradient( 50deg, rgb(70,60,78) 0%, rgb(58,52,88) 100%);
-    position: absolute;
-    left: -50px;
-    top: 0px;
-    width: 250px;
-    height: 768px;
-    z-index: 2;
-}*/
 
+
+.header{
+    background-color: transparent;
+    height: 100px;
+    width: 65%;
+    position: fixed;
+    top: 0;
+    left: 250px;
+}
+.pagecontrol{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0;
+
+    position: absolute;
+    width: 64px;
+    height: 30px;
+    left: 48px;
+    top: calc(50% - 30px/2);
+}
+.pagecontrol a{
+    text-decoration: none;
+    font-size: 1.4em;
+}
+.pagecontrol a:nth-child(1){
+    color: grey;
+}
+.pagecontrol a:nth-child(2){
+    color: black;
+    margin-left: 25px;
+}
+.search{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 20px;
+
+    position: absolute;
+    width: 504px;
+    height: 40px;
+    left: 136px;
+    top: calc(50% - 40px/2);
+
+    background: #FFFFFF;
+    border-radius: 22px;
+    box-shadow: 10px 10px 80px rgba(63, 39, 102, 0.1);
+}
+input[type='text']{
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 1.1em;
+}
+a.search-btn{
+    margin-right: 10px;
+    color: grey;
+    font-size: 1.2em;
+}
+.info-btn, .toggle-list-btn{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: calc(50% - 40px/2);
+    background: #FFFFFF;
+    /* shadow-violet */
+    box-shadow: 10px 10px 80px rgba(63, 39, 102, 0.1);
+    border-radius: 20px;
+}
+.info-btn{
+    right: 200px;
+}
+.toggle-list-btn{
+    right: 150px;
+}
+.info-btn a, .toggle-list-btn a{
+    font-size: 1.2em;
+}
+.info-box{
+    position: absolute;
+    width: 300px;
+    height: 220px;
+    right: 70px;
+    top: 30px;
+
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 15px 15px 105px rgba(63, 39, 102, 0.1);
+    backdrop-filter: blur(25px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 30px;
+}
+.course-heading, .lessons-container, .terms-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+.course-heading{
+    padding: 30px 30px 0;
+}
+.course-footer{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    padding: 30px 30px;
+}
+.course-footer span#lessons-heading, .course-footer span#terms-heading, .course-heading span#lessons-url{
+    color: grey;
+}
+.course-footer span#lessons-count, .course-footer span#terms-count{
+    font-size: x-large;
+    font-weight: bold;
+}
+.course-footer span{
+    padding: 0 30px;
+}
+.lessons-container:after{
+    position: absolute;
+    left: 122px;
+    content: "";
+    background-color: lightgray;
+    width: 1px;
+    height: 50px;
+}
