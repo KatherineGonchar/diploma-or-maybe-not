@@ -10,18 +10,33 @@
     --clr: #f0f0f5;
 }
 body{
-    display: flex;
+    /*display: flex;*/
     justify-content: left;
     align-items: center;
     min-height: 100vh;
     background: var(--clr);
 }
-a{
-    color: black;
+.table-container{
+    display: table;
+    width: 100%;
+}
+.left-container, .middle-container, .right-container{
+    display: table-cell;
+    height: 100vh;
+}
+.left-container{
+    width: 16.3%;
+}
+.middle-container{
+    width: 62%;
+    height: 10000px;
+}
+.right-container{
+    width: calc(100%- 16.3%- 62%);
 }
 .navigation {
     position: fixed; /*was relative*/
-    width: 250px;
+    width: inherit;
     height: 100vh;
     background: linear-gradient(50deg, rgb(70, 60, 78) 0%, rgb(58, 52, 88) 100%);
     border-top-right-radius: 30px;
@@ -142,36 +157,38 @@ a{
 .navigation ul li:nth-child(6).active ~ .indicator{
     transform: translateY(calc(70px * 5 + 50px));
 }
-
+a{
+    color: black;
+}
 
 .header{
     background-color: transparent;
     height: 100px;
-    width: 65%;
-    position: fixed;
+    width: 100%;
+    position: relative;
     top: 0;
-    left: 250px;
+    left: 0;
+    z-index: 1;
 }
-.pagecontrol{
+.page-control{
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     padding: 0;
-
     position: absolute;
     width: 64px;
     height: 30px;
     left: 48px;
     top: calc(50% - 30px/2);
 }
-.pagecontrol a{
+.page-control a{
     text-decoration: none;
     font-size: 1.4em;
 }
-.pagecontrol a:nth-child(1){
+.page-control a:nth-child(1){
     color: grey;
 }
-.pagecontrol a:nth-child(2){
+.page-control a:nth-child(2){
     color: black;
     margin-left: 25px;
 }
@@ -218,19 +235,84 @@ a.search-btn{
     border-radius: 20px;
 }
 .info-btn{
-    right: 200px;
+    right: 100px;
 }
 .toggle-list-btn{
-    right: 150px;
+    right: 30px;
 }
 .info-btn a, .toggle-list-btn a{
     font-size: 1.2em;
 }
-.info-box{
+
+
+
+
+
+
+.courses-cards{
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 200px;
+    padding-left: 48px;
+    padding-right: 30px;
+}
+.cards-container{
+    position: relative;
+    top: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: inherit;
+    height:150px;
+
+}
+.card{
+    position: relative;
+    height: 100%;
+    width: 274px;
+    text-decoration: none;
+    color: white;
+    border-radius: 30px;
+    box-shadow: 0 0 0 0 rgba(143, 64, 248, 0.5), 0 0 0 0 rgba(39, 200, 255, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+.card::after{
+    content: "";
+    width: 500px;
+    height: 500px;
     position: absolute;
+    top: -50px;
+    left: -100px;
+    background-image: radial-gradient(circle at right, #64bbaa , #bf65d5);
+    z-index: -1;
+    transition: transform 0.5s ease;
+}
+.card:hover{
+    transform: translate(0, -6px);
+    box-shadow: 10px -10px 25px 0 rgba(143, 64, 248, 0.5),
+    -10px 10px 25px 0 rgba(100, 187, 170, 0.5);
+}
+.card:hover::after {
+    transform: rotate(150deg);
+}
+.card h3{
+    padding: 100px 25px 22px 25px;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+
+.info-box{
+    position: fixed;
     width: 300px;
     height: 220px;
-    right: 70px;
+    right: 30px;
     top: 30px;
 
     background: rgba(255, 255, 255, 0.2);
@@ -239,7 +321,7 @@ a.search-btn{
     /* Note: backdrop-filter has minimal browser support */
     border-radius: 30px;
 }
-.course-heading, .lessons-container, .terms-container{
+.info-box-heading, .lessons-container, .terms-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -249,24 +331,24 @@ a.search-btn{
     left: 0;
     top: 0;
 }
-.course-heading{
+.info-box-heading{
     padding: 30px 30px 0;
 }
-.course-footer{
+.info-box-footer{
     display: flex;
     flex-direction: row;
     align-content: center;
     align-items: center;
     padding: 30px 30px;
 }
-.course-footer span#lessons-heading, .course-footer span#terms-heading, .course-heading span#lessons-url{
+.info-box-footer span#lessons-heading, .info-box-footer span#terms-heading, .info-box-heading span#lessons-url{
     color: grey;
 }
-.course-footer span#lessons-count, .course-footer span#terms-count{
+.info-box-footer span#lessons-count, .info-box-footer span#terms-count{
     font-size: x-large;
     font-weight: bold;
 }
-.course-footer span{
+.info-box-footer span{
     padding: 0 30px;
 }
 .lessons-container:after{
@@ -277,4 +359,3 @@ a.search-btn{
     width: 1px;
     height: 50px;
 }
-/****/
