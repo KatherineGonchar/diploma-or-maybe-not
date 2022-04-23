@@ -56,27 +56,37 @@
     </div>
     <div class="middle-container">
         <div class="header">
-        <div class="page-control">
-            <a href="#">
-                <i class="fa-solid fa-chevron-left"></i>
-            </a>
-            <a href="#">
-                <i class="fa-solid fa-chevron-right"></i>
-            </a>
+            <div class="page-control">
+                <a href="#">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+            </div>
+            <div class="search">
+                <a href="#" class="search-btn"><i class="fa fa-search"></i></a>
+                <input type="text" name="#" id="search" placeholder="Search..">
+            </div>
+            <div class="info-btn">
+                <a href="#"><i class="fa-solid fa-info"></i></a>
+            </div>
+            <div class="toggle-list-btn">
+                <a href="#"><i class="fa-solid fa-list-ul"></i></a>
+            </div>
         </div>
-        <div class="search">
-            <a href="#" class="search-btn"><i class="fa fa-search"></i></a>
-            <input type="text" name="#" id="search" placeholder="Search..">
-        </div>
-        <div class="info-btn">
-            <a href="#"><i class="fa-solid fa-info"></i></a>
-        </div>
-        <div class="toggle-list-btn">
-            <a href="#"><i class="fa-solid fa-list-ul"></i></a>
-        </div>
-    </div>
         <div class="courses-cards">
-            <h2 class="cards-heading">Courses</h2>
+            <div class="cards-heading">
+                <h2>Courses</h2>
+                <div class="cards-control">
+                    <a href="#" class="pre-btn">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </a>
+                    <a href="#" class="nxt-btn">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
             <div class="cards-container">
                 <a class="card" href="#">
                     <h3>Course name</h3>
@@ -87,6 +97,20 @@
                 <a class="card" href="#">
                     <h3>Course name course name course name</h3>
                 </a>
+                <a class="card" href="#">
+                    <h3>Course name</h3>
+                </a>
+                <a class="card" href="#">
+                    <h3>Course name</h3>
+                </a>
+                <a class="card" href="#">
+                    <h3>Course name course name course name</h3>
+                </a>
+            </div>
+        </div>
+        <div class="stream">
+            <div class="stream-heading">
+                <h2>Stream</h2>
             </div>
         </div>
 </div>
@@ -121,6 +145,26 @@
     }
     list.forEach((item) =>
         item.addEventListener('click', activeLink))
+
+
+
+
+    const productContainers = [...document.querySelectorAll('.cards-container')];
+    const nxtBtn = [...document.querySelectorAll('.nxt-btn')];
+    const preBtn = [...document.querySelectorAll('.pre-btn')];
+
+    productContainers.forEach((item, i) => {
+        let containerDimensions = item.getBoundingClientRect();
+        let containerWidth = containerDimensions.width;
+        console.log(item.offsetWidth);
+        nxtBtn[i].addEventListener('click', () => {
+            item.scrollLeft += containerWidth;
+        })
+
+        preBtn[i].addEventListener('click', () => {
+            item.scrollLeft -= containerWidth;
+        })
+    })
 </script>
 </body>
 </html>
