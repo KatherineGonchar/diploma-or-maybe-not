@@ -1,2 +1,2 @@
 # diplomaormaybenot
-some scrabblles for qualifying work
+some scrabbles for qualifying work
