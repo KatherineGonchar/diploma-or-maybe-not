@@ -144,22 +144,22 @@ body{
     border-top-right-radius: 30px;
     box-shadow: 10px -10px 0 0 var(--clr);
 }
-.navigation ul li:nth-child(1).active ~ .indicator{
+.navigation ul li:nth-child(1).active ~ .indicator, .navigation ul li:nth-child(1).hovered ~ .indicator{
     transform: translateY(calc(70px * 0));
 }
-.navigation ul li:nth-child(2).active ~ .indicator{
+.navigation ul li:nth-child(2).active ~ .indicator, .navigation ul li:nth-child(2).hovered ~ .indicator{
     transform: translateY(calc(70px * 1));
 }
-.navigation ul li:nth-child(3).active ~ .indicator{
+.navigation ul li:nth-child(3).active ~ .indicator, .navigation ul li:nth-child(3).hovered ~ .indicator{
     transform: translateY(calc(70px * 2));
 }
-.navigation ul li:nth-child(4).active ~ .indicator{
+.navigation ul li:nth-child(4).active ~ .indicator, .navigation ul li:nth-child(4).hovered ~ .indicator{
     transform: translateY(calc(70px * 3));
 }
-.navigation ul li:nth-child(5).active ~ .indicator{
+.navigation ul li:nth-child(5).active ~ .indicator, .navigation ul li:nth-child(5).hovered ~ .indicator{
     transform: translateY(calc(70px * 4 + 50px));
 }
-.navigation ul li:nth-child(6).active ~ .indicator{
+.navigation ul li:nth-child(6).active ~ .indicator, .navigation ul li:nth-child(6).hovered ~ .indicator{
     transform: translateY(calc(70px * 5 + 50px));
 }
 a{
