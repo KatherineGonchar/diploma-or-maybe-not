@@ -371,7 +371,7 @@ a.search-btn{
     transform: rotate(150deg);
 }
 .card h3{
-    padding: 100px 25px 22px 25px;
+    padding: 70px 25px 22px 25px;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -383,6 +383,48 @@ a.search-btn{
     padding-left: 48px;
     padding-right: 30px;
 }
+.card .card-bg{
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 80%;
+    background-position: 10px;
+}
+.card:nth-child(1) .card-bg{
+    background-image: url("../img/blood-report.png");
+}
+.card:nth-child(2) .card-bg{
+    background-image: url("../img/books.png");
+}
+.card:nth-child(3) .card-bg{
+    background-image: url("../img/online-study.png");
+}
+.card:nth-child(4) .card-bg{
+    background-image: url("../img/stationary-jar.png");
+}
+.card:nth-child(5) .card-bg{
+    background-image: url("../img/atom.png");
+}
+.card:nth-child(6) .card-bg{
+    background-image: url("../img/abacus.png");
+}
+.link-button{
+    position: relative;
+    top: 15px;
+    left: 225px;
+    padding: 8px 12px;
+    border-radius: 50%;
+    border: 0;
+    background-color: rgba(255,255,255,0.3);
+    color: #FFFFFF;
+    transition: 0.2s;
+}
+.link-button:hover{
+    background-color: rgba(255,255,255,0.4);
+}
+.link-button:active{
+    background-color: rgba(255,255,255,0.2);;
+}
+
 
 
 
