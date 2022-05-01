@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
 *{
     margin: 0;
@@ -29,7 +31,7 @@ body{
 }
 .middle-container{
     width: 62%;
-    height: 10000px;
+    padding-bottom: 21px;
 }
 .right-container{
     width: calc(100%- 16.3%- 62%);
@@ -376,13 +378,6 @@ a.search-btn{
     white-space: nowrap;
     overflow: hidden;
 }
-
-.stream{
-    position: relative;
-    width: 100%;
-    padding-left: 48px;
-    padding-right: 30px;
-}
 .card .card-bg{
     background-size: contain;
     background-repeat: no-repeat;
@@ -426,7 +421,96 @@ a.search-btn{
 }
 
 
+.stream{
+    position: relative;
+    top: -10px;
+    width: 100%;
+    padding-left: 48px;
+    padding-right: 30px;
+}
+.date-picker{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    position: absolute;
+    height: 37px;
+    right: 30px;
+    top: 0;
+}
+.date-picker input{
+    position: relative;
+    bottom: 1px;
+    padding-bottom: 0;
+    border: none;
+    background-color: var(--clr);
+    padding-right: 0;
+    width: 90px;
+}
+.date-picker input::-webkit-calendar-picker-indicator{
+    font-size: 1.1em;
+    position: relative;
+    top: 0;
+}
+.date-picker a{
+    text-decoration: none;
+}
+.date-picker a:nth-child(1){
+    color: grey;
+    margin-right: 3px;
+}
+.date-picker a:nth-child(2){
+    color: black;
+}
 
+
+.stream article{
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 15px 15px 105px rgba(63, 39, 102, 0.1);
+    backdrop-filter: blur(25px);
+    border-radius: 30px;
+    padding: 20px 30px;
+    margin-top: 25px;
+}
+article p{
+    font-family: 'Open Sans', sans-serif;
+}
+.article-footer{
+    display: inline-block;
+    margin-top: 10px;
+    color: grey;
+}
+.post-author{
+    margin-right: 15px;
+}
+article .post-date input, article .post-date input:focus-within{
+    border: none;
+    background: transparent;
+    outline: none;
+    color: grey;
+}
+.post-author, .post-date i, .article-footer a{
+    font-size: 0.8em;
+}
+.post-author i, .post-date i, .article-footer a i{
+    margin-right: 5px;
+}
+.article-footer a{
+    margin-left: 439px;
+    color: grey;
+}
+.post #first-example-img{
+    height: 50%;
+    width: 50%;
+    float: right;
+    margin-left: 20px;
+}
+.post #second-example-img{
+    float: left;
+    width: 50%;
+    height: 50%;
+    margin-right: 20px;
+}
 
 
 
@@ -525,4 +609,46 @@ a.search-btn{
 }
 .contacts-professor-container{
     top: 590px;
+}
+.contacts-do-container h3, .contacts-dep-container h3, .contacts-professor-container h3{
+    position: relative;
+    left: 30px;
+    top: 25px;
+    color: black;
+}
+.contacts-do-container .contacts-amount{
+    position: relative;
+    top: 50px;
+    right: 96px;
+    color: grey;
+}
+.contacts-dep-container .contacts-amount{
+    position: relative;
+    top: 50px;
+    right: 177px;
+    color: grey;
+}
+.contacts-professor-container .contacts-amount{
+    position: relative;
+    top: 50px;
+    right: 75px;
+    color: grey;
+}
+.contacts-do-container .open-contacts{
+    position: relative;
+    top: 37px;
+    left: 50px;
+    color: #AD76CD;
+}
+.contacts-dep-container .open-contacts {
+    position: relative;
+    top: 12px;
+    left: 266px;
+    color: #E9A197;
+}
+.contacts-professor-container .open-contacts{
+    position: relative;
+    left: 61px;
+    top: 37px;
+    color: #B8A6E1;
 }
